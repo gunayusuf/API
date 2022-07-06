@@ -1,0 +1,20 @@
+package base_urls;
+
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.specification.RequestSpecification;
+import org.junit.Before;
+
+public class HerokuAppBaseUrl {
+
+    protected RequestSpecification spec;
+
+    //@Before annotation'i kullandigimiz methodlar her Test metodundan once calistirilir
+    @Before
+    public void setUp(){
+
+        spec=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
+
+    }
+
+
+}
